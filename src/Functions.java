@@ -10,31 +10,69 @@ public class Functions {
         return input;
     }
 
-    Boolean openFile(String file_path) {
-
+    public Boolean openFile(String filepath) {
         try{
-        FileReader file = new FileReader(file_path);
-        BufferedReader br = new BufferedReader(file);
 
-        String line = br.readLine();
-        System.out.println("Urinals count for  " + line + " :  "  + countUrinals(line));
+            File open_file=new File(filepath);
+            if(open_file==null)
+                throw new IOException();
 
-            while (line != null) {
-                line = br.readLine();
-                if(line.equals("-1")){
+            String counter_path = "src/counter.txt";
+            File counter_file=new File(counter_path);
+            if(counter_file==null){
+                throw new IOException();
+            }
+            Scanner scanner=new Scanner(counter_file);
+            int counter=Integer.parseInt(scanner.nextLine());
+
+            String out_file="src/rule.txt";
+            if(counter!=0)
+                out_file="src/rule"+counter+".txt";
+
+            Scanner scanner1=new Scanner(open_file);
+
+            while(scanner1.hasNextLine()){
+                String str=scanner1.nextLine();
+                if(str.equals("-1"))
                     break;
-                }
+                int empty =countUrinals(str);
+                writeFile(out_file,empty);
 
-                System.out.println("Urinals count for  " + line + " :  " + countUrinals(line));
             }
 
-        return true;
-        }
+            FileWriter cwriter=new FileWriter("src/counter.txt");
+            if(cwriter==null)
+                throw new IOException();
+            cwriter.write(Integer.toString(counter+1));
+            cwriter.close();
 
-        catch (IOException ex){
+
+            return  true;
+        }
+        catch(IOException e)
+        {
             return false;
         }
 
+    }
+    public Boolean writeFile(String out_file,int empty){
+        try {
+            FileWriter writer = new FileWriter(out_file, true);
+            if(writer==null)
+                throw new IOException();
+            BufferedWriter bw=new BufferedWriter(writer);
+            if(bw==null)
+                throw new IOException();
+
+            bw.write(Integer.toString(empty));
+            bw.newLine();
+            bw.close();
+            return true;
+        }
+        catch(IOException e){
+            e.printStackTrace();
+            return false;
+        }
     }
     Boolean goodString( String s ) {  // checks to see if valid string
 

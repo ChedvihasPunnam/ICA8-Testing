@@ -40,5 +40,12 @@ public class urinalsTest {
 
     }
 
+    @Test
+    void writeFile_test(){
+        Functions func = new Functions();
+        Assertions.assertEquals(true, func.writeFile("src/rule.txt",3));
+
+    }
+
 
 }
