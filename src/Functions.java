@@ -35,8 +35,34 @@ public class Functions {
     public Integer countUrinals(String s)
     {
 
-        System.out.println("Not yet implemented");
-            return 0;
+        if (!goodString(s)){
+            return -1;
+        }
+        StringBuilder input = new StringBuilder(s);
+        int counter = 0;
+        for (int i = 0; i < input.length(); i++) {
+
+            if (input.charAt(i) == '0'){
+                if(i==0 ){
+                    if (input.charAt(i+1) == '0' ){
+                        input.replace(i,i+1,"1");
+                        counter = counter + 1;
+                    }
+                }
+                else if (i==input.length()-1) {
+                    if (input.charAt(i-1) == '0'){
+                        input.replace(i,i+1,"1");
+                        counter = counter + 1;
+                    }
+                }
+                else {
+                    if (input.charAt(i+1) == '0' && input.charAt(i-1) == '0'){
+                        input.replace(i,i+1,"1");
+                        counter = counter + 1;
+                    } }
+            }
+        }
+            return counter;
     }
 
 }
