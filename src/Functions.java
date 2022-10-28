@@ -11,7 +11,8 @@ public class Functions {
 
     Boolean openFile(String file_path){
         System.out.println ("Not yet implemented");
-        return true;
+
+        return false;
     }
     Boolean goodString( String s ) {  // checks to see if valid string
 

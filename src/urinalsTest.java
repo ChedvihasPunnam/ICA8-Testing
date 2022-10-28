@@ -31,7 +31,7 @@ public class urinalsTest {
 
         Functions func = new Functions();
         System.out.println("==============Chedvihas Punnam== TEST THREE EXECUTED=================");
-        Assertions.assertEquals(false, func.openFile("src/urinal.dat"));
+        Assertions.assertEquals(true, func.openFile("src/urinal.dat"));
 
 
     }
