@@ -10,10 +10,31 @@ public class Functions {
         return input;
     }
 
-    Boolean openFile(String file_path){
-        System.out.println ("Not yet implemented");
+    Boolean openFile(String file_path) {
+
+        try{
+        FileReader file = new FileReader(file_path);
+        BufferedReader br = new BufferedReader(file);
+
+        String line = br.readLine();
+        System.out.println("Urinals count for  " + line + " :  "  + countUrinals(line));
+
+            while (line != null) {
+                line = br.readLine();
+                if(line.equals("-1")){
+                    break;
+                }
+
+                System.out.println("Urinals count for  " + line + " :  " + countUrinals(line));
+            }
 
         return true;
+        }
+
+        catch (IOException ex){
+            return false;
+        }
+
     }
     Boolean goodString( String s ) {  // checks to see if valid string
 

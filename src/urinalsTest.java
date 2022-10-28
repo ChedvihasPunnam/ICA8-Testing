@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
+import java.io.FileNotFoundException;
+
 public class urinalsTest {
     @Test
     void good_string_test() {
@@ -27,7 +29,7 @@ public class urinalsTest {
     }
 
     @Test
-    void openFile_test(){
+    void openFile_test() throws FileNotFoundException {
 
         Functions func = new Functions();
         System.out.println("==============Chedvihas Punnam== TEST THREE EXECUTED=================");
