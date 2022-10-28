@@ -12,7 +12,7 @@ public class Functions {
     Boolean goodString( String s ) {  // checks to see if valid string
 
         Integer check = s.length();
-        for(int i=0;i<check;i++)
+        for(int i=0; i < check; i++)
         {
             if(s.charAt(i)!='0' && s.charAt(i)!='1')
             {
@@ -21,7 +21,7 @@ public class Functions {
 
             if(i+1 < check)
             {
-                if(s.charAt(i) == '1' && s.charAt(i+1) == '1')
+                if(s.charAt(i)=='1' && s.charAt(i+1)=='1')
                 {
                     return  false;
                 }
@@ -31,6 +31,12 @@ public class Functions {
         return true;
 
 
+    }
+    public Integer countUrinals(String s)
+    {
+
+        System.out.println("Not yet implemented");
+            return 0;
     }
 
 }

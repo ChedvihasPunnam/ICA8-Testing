@@ -8,7 +8,12 @@ import java.lang.*;
 public class Urinals {
     public static void main(String[] args) {
 
-        System.out.println("Implementing basic skeleton");
+        Functions func = new Functions();
+        String input = func.getString();
+        Integer out = func.countUrinals(input);
+
+
+        System.out.println("Urinals count : " + func.countUrinals(input));
 
 
     }
