@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.Scanner;
 
 public class Functions {
@@ -12,7 +13,7 @@ public class Functions {
     Boolean openFile(String file_path){
         System.out.println ("Not yet implemented");
 
-        return false;
+        return true;
     }
     Boolean goodString( String s ) {  // checks to see if valid string
 
