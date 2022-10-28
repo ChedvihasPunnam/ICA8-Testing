@@ -9,6 +9,10 @@ public class Functions {
         return input;
     }
 
+    Boolean openFile(String file_path){
+        System.out.println ("Not yet implemented");
+        return true;
+    }
     Boolean goodString( String s ) {  // checks to see if valid string
 
         Integer check = s.length();

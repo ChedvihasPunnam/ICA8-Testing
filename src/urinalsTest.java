@@ -26,5 +26,15 @@ public class urinalsTest {
 
     }
 
+    @Test
+    void openFile_test(){
+
+        Functions func = new Functions();
+        System.out.println("==============Chedvihas Punnam== TEST THREE EXECUTED=================");
+        Assertions.assertEquals(false, func.openFile("src/urinal.dat"));
+
+
+    }
+
 
 }
